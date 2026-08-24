@@ -1,2 +1,834 @@
-Dylan Isaac Heredia Rodriguez
-S26004642
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dylan Isaac Heredia Rodríguez | Portfolio</title>
+
+    <meta name="description"
+          content="CV y portafolio personal de Dylan Isaac Heredia Rodríguez, estudiante de Ingeniería de Software.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #888;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 8% 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(
+                circle,
+                rgba(255,255,255,0.08),
+                transparent 70%
+            );
+            top: 5%;
+            right: -200px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tag {
+            display: inline-block;
+            border: 1px solid #333;
+            padding: 8px 16px;
+            border-radius: 50px;
+            color: #aaa;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(50px, 8vw, 100px);
+            line-height: 0.95;
+            letter-spacing: -5px;
+            margin-bottom: 30px;
+        }
+
+        h1 span {
+            color: #777;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            font-size: 20px;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            text-decoration: none;
+            color: white;
+            border: 1px solid #444;
+            padding: 14px 25px;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .button.primary {
+            background: white;
+            color: black;
+            border-color: white;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            border-color: white;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 120px 8%;
+            border-top: 1px solid #151515;
+        }
+
+        .section-label {
+            color: #666;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: clamp(35px, 5vw, 60px);
+            letter-spacing: -2px;
+            margin-bottom: 50px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .about-text {
+            color: #aaa;
+            font-size: 18px;
+        }
+
+        .about-text strong {
+            color: white;
+        }
+
+        .info {
+            display: grid;
+            gap: 20px;
+        }
+
+        .info-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .info-item small {
+            display: block;
+            color: #666;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .info-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .skill {
+            border: 1px solid #222;
+            padding: 30px 20px;
+            min-height: 150px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            border-color: #666;
+            transform: translateY(-5px);
+        }
+
+        .skill-number {
+            color: #555;
+            font-size: 12px;
+        }
+
+        .skill h3 {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+
+        /* EXPERIENCE */
+
+        .timeline {
+            max-width: 900px;
+        }
+
+        .experience {
+            border-left: 1px solid #333;
+            padding: 0 0 50px 35px;
+            position: relative;
+        }
+
+        .experience::before {
+            content: "";
+            position: absolute;
+            left: -5px;
+            top: 5px;
+            width: 9px;
+            height: 9px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .experience-date {
+            color: #666;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .experience h3 {
+            font-size: 25px;
+            margin: 10px 0;
+        }
+
+        .experience p {
+            color: #999;
+            max-width: 700px;
+        }
+
+        /* PORTFOLIO */
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            border: 1px solid #222;
+            min-height: 330px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.4s;
+            background: linear-gradient(
+                145deg,
+                #0c0c0c,
+                #050505
+            );
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+            border-color: #666;
+        }
+
+        .project-number {
+            color: #555;
+            font-size: 13px;
+        }
+
+        .project h3 {
+            font-size: 27px;
+            margin: 20px 0 10px;
+        }
+
+        .project p {
+            color: #888;
+            font-size: 15px;
+        }
+
+        .project-tech {
+            margin-top: 25px;
+            color: #bbb;
+            font-size: 12px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .contact h2 {
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            color: #888;
+            margin-bottom: 35px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 40px 8%;
+            border-top: 1px solid #151515;
+            display: flex;
+            justify-content: space-between;
+            color: #555;
+            font-size: 12px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .skills {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 18px 6%;
+            }
+
+            .hero {
+                padding: 120px 6% 80px;
+            }
+
+            section {
+                padding: 80px 6%;
+            }
+
+            h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero-description {
+                font-size: 17px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <div class="logo">
+            DYLAN<span>.</span>
+        </div>
+
+        <ul>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#portafolio">Portafolio</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="tag">
+                INGENIERÍA DE SOFTWARE · FUTURO DIGITAL
+            </div>
+
+            <h1>
+                Dylan Isaac<br>
+                <span>Heredia Rodríguez.</span>
+            </h1>
+
+            <p class="hero-description">
+                Estudiante de Ingeniería de Software apasionado por la
+                tecnología, la innovación y la creación de soluciones
+                digitales capaces de resolver problemas reales.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#portafolio" class="button primary">
+                    Ver soluciones
+                </a>
+
+                <a href="#contacto" class="button">
+                    Contactarme
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- SOBRE MI -->
+
+    <section id="sobre-mi">
+
+        <div class="section-label">
+            01 — Perfil
+        </div>
+
+        <h2>Sobre mí</h2>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    Soy <strong>Dylan Isaac Heredia Rodríguez</strong>,
+                    estudiante de Ingeniería de Software con interés
+                    en el desarrollo tecnológico y la resolución de
+                    problemas mediante herramientas digitales.
+                </p>
+
+                <br>
+
+                <p>
+                    Mi objetivo es desarrollar una combinación de
+                    conocimientos técnicos, pensamiento lógico y
+                    creatividad para construir software útil,
+                    eficiente y escalable.
+                </p>
+
+            </div>
+
+
+            <div class="info">
+
+                <div class="info-item">
+                    <small>Nombre completo</small>
+                    Dylan Isaac Heredia Rodríguez
+                </div>
+
+                <div class="info-item">
+                    <small>Área</small>
+                    Ingeniería de Software
+                </div>
+
+                <div class="info-item">
+                    <small>Instagram</small>
+                    <a href="https://instagram.com/dyl_sac"
+                       target="_blank">
+                        @dyl_sac
+                    </a>
+                </div>
+
+                <div class="info-item">
+                    <small>Teléfono</small>
+                    <a href="tel:+522722479269">
+                        +52 272 247 9269
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HABILIDADES -->
+
+    <section id="habilidades">
+
+        <div class="section-label">
+            02 — Capacidades
+        </div>
+
+        <h2>Habilidades</h2>
+
+        <div class="skills">
+
+            <div class="skill">
+                <span class="skill-number">01</span>
+                <h3>Inglés</h3>
+            </div>
+
+            <div class="skill">
+                <span class="skill-number">02</span>
+                <h3>Ofimática</h3>
+            </div>
+
+            <div class="skill">
+                <span class="skill-number">03</span>
+                <h3>Programación</h3>
+            </div>
+
+            <div class="skill">
+                <span class="skill-number">04</span>
+                <h3>Pensamiento lógico</h3>
+            </div>
+
+            <div class="skill">
+                <span class="skill-number">05</span>
+                <h3>Resolución de problemas</h3>
+            </div>
+
+            <div class="skill">
+                <span class="skill-number">06</span>
+                <h3>Trabajo en equipo</h3>
+            </div>
+
+            <div class="skill">
+                <span class="skill-number">07</span>
+                <h3>Comunicación</h3>
+            </div>
+
+            <div class="skill">
+                <span class="skill-number">08</span>
+                <h3>Adaptabilidad</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCIA -->
+
+    <section id="experiencia">
+
+        <div class="section-label">
+            03 — Formación
+        </div>
+
+        <h2>Experiencia</h2>
+
+        <div class="timeline">
+
+            <div class="experience">
+
+                <div class="experience-date">
+                    Formación académica
+                </div>
+
+                <h3>
+                    Instituto Internacional Estandarte
+                    para las Naciones — ESPANA
+                </h3>
+
+                <p>
+                    Formación integral enfocada en disciplina,
+                    liderazgo, comunicación, trabajo en equipo,
+                    desarrollo personal y adquisición de nuevas
+                    competencias.
+                </p>
+
+            </div>
+
+
+            <div class="experience">
+
+                <div class="experience-date">
+                    Actualidad
+                </div>
+
+                <h3>
+                    Ingeniería de Software
+                </h3>
+
+                <p>
+                    Formación universitaria orientada al desarrollo
+                    de software, pensamiento computacional,
+                    resolución de problemas y creación de
+                    soluciones tecnológicas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PORTAFOLIO -->
+
+    <section id="portafolio">
+
+        <div class="section-label">
+            04 — Portafolio
+        </div>
+
+        <h2>Soluciones digitales</h2>
+
+        <div class="portfolio-grid">
+
+
+            <article class="project">
+
+                <div>
+                    <span class="project-number">
+                        SOLUCIÓN 01
+                    </span>
+
+                    <h3>
+                        Sistemas web
+                    </h3>
+
+                    <p>
+                        Desarrollo de aplicaciones web enfocadas
+                        en resolver necesidades específicas de
+                        usuarios y organizaciones.
+                    </p>
+                </div>
+
+                <div class="project-tech">
+                    HTML · CSS · JavaScript
+                </div>
+
+            </article>
+
+
+            <article class="project">
+
+                <div>
+                    <span class="project-number">
+                        SOLUCIÓN 02
+                    </span>
+
+                    <h3>
+                        Automatización
+                    </h3>
+
+                    <p>
+                        Creación de herramientas capaces de
+                        automatizar tareas repetitivas y mejorar
+                        procesos mediante tecnología.
+                    </p>
+                </div>
+
+                <div class="project-tech">
+                    Python · Automatización
+                </div>
+
+            </article>
+
+
+            <article class="project">
+
+                <div>
+                    <span class="project-number">
+                        SOLUCIÓN 03
+                    </span>
+
+                    <h3>
+                        Herramientas digitales
+                    </h3>
+
+                    <p>
+                        Diseño de soluciones digitales sencillas,
+                        funcionales y orientadas a mejorar la
+                        productividad.
+                    </p>
+                </div>
+
+                <div class="project-tech">
+                    Software · Productividad
+                </div>
+
+            </article>
+
+
+            <article class="project">
+
+                <div>
+                    <span class="project-number">
+                        PRÓXIMAMENTE
+                    </span>
+
+                    <h3>
+                        Tu próximo proyecto
+                    </h3>
+
+                    <p>
+                        Este espacio puede utilizarse para
+                        presentar uno de tus proyectos reales
+                        de Ingeniería de Software.
+                    </p>
+                </div>
+
+                <div class="project-tech">
+                    Proyecto personal
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACTO -->
+
+    <section id="contacto">
+
+        <div class="contact">
+
+            <div class="section-label">
+                05 — Contacto
+            </div>
+
+            <h2>
+                Construyamos algo.
+            </h2>
+
+            <p>
+                ¿Tienes una idea, proyecto o problema que pueda
+                convertirse en una solución digital?
+            </p>
+
+            <div class="buttons">
+
+                <a class="button primary"
+                   href="tel:+522722479269">
+                    Llamar
+                </a>
+
+                <a class="button"
+                   href="https://instagram.com/dyl_sac"
+                   target="_blank">
+                    Instagram
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <span>
+            © 2026 Dylan Isaac Heredia Rodríguez
+        </span>
+
+        <span>
+            Ingeniería de Software
+        </span>
+
+    </footer>
+
+</body>
+</html>
