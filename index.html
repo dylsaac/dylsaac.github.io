@@ -5,6 +5,8 @@
 
     <meta charset="UTF-8">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Currículum - Dylan Heredia</title>
 
     <style>
@@ -13,6 +15,7 @@
             font-family: Arial, sans-serif;
             margin: 40px;
             color: #222;
+            background-color: #fff;
         }
 
         .encabezado {
@@ -20,11 +23,12 @@
             align-items: center;
             justify-content: space-between;
             border-bottom: 2px solid #999;
-            padding-bottom: 20px;
+            padding-bottom: 25px;
+            gap: 30px;
         }
 
         .nombre {
-            width: 35%;
+            width: 40%;
         }
 
         .nombre h1 {
@@ -34,6 +38,7 @@
 
         .nombre p {
             font-size: 13px;
+            line-height: 1.5;
         }
 
         .foto {
@@ -55,22 +60,24 @@
 
         .contenido {
             display: flex;
-            gap: 40px;
-            margin-top: 25px;
+            gap: 50px;
+            margin-top: 30px;
         }
 
         .izquierda {
-            width: 55%;
+            width: 60%;
         }
 
         .derecha {
-            width: 45%;
+            width: 40%;
         }
 
         h2 {
             font-size: 21px;
             border-bottom: 2px solid #333;
             padding-bottom: 5px;
+            margin-top: 25px;
+            margin-bottom: 15px;
         }
 
         h3 {
@@ -80,43 +87,62 @@
 
         p {
             font-size: 13px;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         ul {
             font-size: 13px;
             line-height: 1.8;
+            padding-left: 20px;
         }
 
-        .habilidad {
-            margin-bottom: 15px;
+        .habilidades-lista {
+            columns: 2;
+            padding-left: 20px;
         }
 
-        .barra {
-            width: 100%;
-            height: 12px;
-            border: 1px solid #555;
+        .habilidades-lista li {
+            margin-bottom: 6px;
         }
 
-        .nivel {
-            height: 12px;
-            background-color: #555;
-        }
+        @media (max-width: 800px) {
 
-        .ingles {
-            width: 80%;
-        }
+            body {
+                margin: 20px;
+            }
 
-        .programacion {
-            width: 75%;
-        }
+            .encabezado {
+                flex-direction: column;
+                text-align: center;
+            }
 
-        .ofimatica {
-            width: 85%;
-        }
+            .nombre,
+            .contacto {
+                width: 100%;
+            }
 
-        .comunicacion {
-            width: 90%;
+            .contacto {
+                text-align: center;
+            }
+
+            .contenido {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .izquierda,
+            .derecha {
+                width: 100%;
+            }
+
+            .foto {
+                order: -1;
+            }
+
+            .habilidades-lista {
+                columns: 1;
+            }
+
         }
 
     </style>
@@ -186,8 +212,57 @@
         <div class="izquierda">
 
 
-            <h2>Experiencia y Proyectos</h2>
+            <!-- PERFIL -->
 
+            <h2>Perfil</h2>
+
+            <p>
+                Estudiante interesado en la tecnología,
+                programación, desarrollo de software y
+                liderazgo de proyectos. Con interés en
+                continuar desarrollando habilidades técnicas
+                y profesionales.
+            </p>
+
+
+            <!-- HABILIDADES -->
+
+            <h2>Habilidades</h2>
+
+            <ul class="habilidades-lista">
+
+                <li>Programación</li>
+
+                <li>Inglés</li>
+
+                <li>Ofimática</li>
+
+                <li>Comunicación</li>
+
+            </ul>
+
+
+            <!-- EDUCACIÓN -->
+
+            <h2>Educación</h2>
+
+            <h3>Preparatoria</h3>
+
+            <p>
+                Educación media superior.
+            </p>
+
+            <h3>Ingeniería de Software</h3>
+
+            <p>
+                Formación profesional enfocada en programación,
+                desarrollo de software y tecnología.
+            </p>
+
+
+            <!-- EXPERIENCIA Y PROYECTOS -->
+
+            <h2>Experiencia y Proyectos</h2>
 
             <h3>Programación de videojuegos</h3>
 
@@ -213,72 +288,9 @@
             </p>
 
 
-
-            <h2>Educación</h2>
-
-            <h3>Preparatoria</h3>
-
-            <p>
-                Educación media superior.
-            </p>
-
-            <h3>Ingeniería de Software</h3>
-
-            <p>
-                Formación profesional enfocada en programación,
-                desarrollo de software y tecnología.
-            </p>
-
-
-
-            <h2>Metas Profesionales</h2>
-
-            <p>
-                Alcanzar una excelencia profesional y desarrollar
-                una carrera en el área de Ingeniería de Software,
-                con la meta de convertirme en Project Manager
-                y participar en proyectos tecnológicos.
-            </p>
-
-
-
-            <h2>Intereses</h2>
-
-            <ul>
-
-                <li>Canto</li>
-
-                <li>Tocar la guitarra</li>
-
-                <li>Predicar acerca de Jesús</li>
-
-                <li>Leer la Biblia</li>
-
-                <li>Natación</li>
-
-                <li>Fútbol</li>
-
-            </ul>
-
-
-
-            <h2>Gustos Musicales</h2>
-
-            <p>
-                Pop | Cumbia | Rock
-            </p>
-
-
-        </div>
-
-
-
-        <!-- COLUMNA DERECHA -->
-
-       
+            <!-- CERTIFICACIONES -->
 
             <h2>Certificaciones</h2>
-
 
             <h3>TOEFL</h3>
 
@@ -301,6 +313,39 @@
             </p>
 
 
+        </div>
+
+
+        <!-- COLUMNA DERECHA -->
+
+        <div class="derecha">
+
+
+            <!-- OBJETIVO PROFESIONAL -->
+
+            <h2>Objetivo Profesional</h2>
+
+            <p>
+                Crecer constantemente en el área de tecnología,
+                adquirir experiencia en desarrollo de software
+                y posteriormente liderar proyectos como
+                Project Manager.
+            </p>
+
+
+            <!-- METAS PROFESIONALES -->
+
+            <h2>Metas Profesionales</h2>
+
+            <p>
+                Alcanzar una excelencia profesional y desarrollar
+                una carrera en el área de Ingeniería de Software,
+                con la meta de convertirme en Project Manager
+                y participar en proyectos tecnológicos.
+            </p>
+
+
+            <!-- IDIOMAS -->
 
             <h2>Idiomas</h2>
 
@@ -313,26 +358,33 @@
             </ul>
 
 
+            <!-- INTERESES -->
 
-            <h2>Objetivo Profesional</h2>
+            <h2>Intereses</h2>
+
+            <ul>
+
+                <li>Canto</li>
+
+                <li>Tocar la guitarra</li>
+
+                <li>Predicar acerca de Jesús</li>
+
+                <li>Leer la Biblia</li>
+
+                <li>Natación</li>
+
+                <li>Fútbol</li>
+
+            </ul>
+
+
+            <!-- GUSTOS MUSICALES -->
+
+            <h2>Gustos Musicales</h2>
 
             <p>
-                Crecer constantemente en el área de tecnología,
-                adquirir experiencia en desarrollo de software
-                y posteriormente liderar proyectos como
-                Project Manager.
-            </p>
-
-
-
-            <h2>Perfil</h2>
-
-            <p>
-                Estudiante interesado en la tecnología,
-                programación, desarrollo de software y
-                liderazgo de proyectos. Con interés en
-                continuar desarrollando habilidades técnicas
-                y profesionales.
+                Pop | Cumbia | Rock
             </p>
 
 
